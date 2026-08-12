@@ -1,0 +1,53 @@
+@theme {
+    --var-color-Ground: #161826;
+    --var-color-Surface: #232532;
+    --var-color-blurple: #9184d9;
+    --var-color-deep-indigo: #262a60;
+    --var-color-text: #e9e9ed;
+
+    --var-color-indigo-band-base: #262a60;
+    --var-color-indigo-band-glow: #353b80;
+    --var-color-indigo-band-edge: #4c5397;
+
+    --var-color-neutral-100: #f3f5fe;
+    --var-color-neutral-200: #e4e7f5;
+    --var-color-neutral-300: #cfd3e5;
+    --var-color-neutral-400: #b2b6ca;
+    --var-color-neutral-500: #9397ab;
+    --var-color-neutral-600: #75798c;
+    --var-color-neutral-700: #595d6c;
+    --var-color-neutral-800: #3f424d;
+    --var-color-neutral-900: #292b31;
+
+    --var-color-accent-purple-100: #f5f4ff;
+    --var-color-accent-purple-200: #e7e5fe;
+    --var-color-accent-purple-300: #d2cefd;
+    --var-color-accent-purple-400: #b5abfc;
+    --var-color-accent-purple-500: #968ae0;
+    --var-color-accent-purple-600: #796cbf;
+    --var-color-accent-purple-700: #5d5294;
+    --var-color-accent-purple-800: #423a6a;
+    --var-color-accent-purple-900: #2b2741;
+
+    --var-color-accent2-muted-violet-100: #f5f4ff;
+    --var-color-accent2-muted-violet-200: #f5f4ff;
+    --var-color-accent2-muted-violet-300: #f5f4ff;
+    --var-color-accent2-muted-violet-400: #f5f4ff;
+    --var-color-accent2-muted-violet-500: #f5f4ff;
+    --var-color-accent2-muted-violet-600: #f5f4ff;
+    --var-color-accent2-muted-violet-700: #f5f4ff;
+    --var-color-accent2-muted-violet-800: #f5f4ff;
+    --var-color-accent2-muted-violet-900: #f5f4ff;
+
+    --font-instrument-sans: 'Instrument Sans', sans-serif;
+    --font-weight-500: 500;
+    --font-weight-400: 400;
+
+    --font-size-hero: 118px;
+    --font-size-pheading: 62px;
+    --font-size-sheading: 30px;
+    --font-size-body: 17px;
+    --font-size-kicker: 12px;
+
+    --font-line-height-body: 1.65;
+}
