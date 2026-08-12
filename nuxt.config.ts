@@ -14,10 +14,5 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/a11y",
     "@nuxt/image",
-    "@nuxtjs/tailwindcss",
   ],
-  tailwindcss: {
-    exposeConfig: true,
-    viewer: true,
-  },
 });
