@@ -41,7 +41,8 @@
     --color-accent-muted-violet-800: #423e5d;
     --color-accent-muted-violet-900: #2b293a;
 
-    --font-instrument-sans: "Instrument Sans", sans-serif;
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
     --font-weight-500: 500;
     --font-weight-400: 400;
 
