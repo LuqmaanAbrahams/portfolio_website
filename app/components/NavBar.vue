@@ -38,7 +38,7 @@ li {
   color: var(--color-accent-purple-500);
   background-color: var(--color-accent-purple-900);
   border-radius: 5px;
-  transition: background-color ease-in 0.2s;
+  transition: background-color ease-in-out 0.2s;
 }
 </style>
 <script setup lang="ts">
