@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+    --color-ground: #161826;
+    --color-surface: #232532;
+    --color-blurple: #9184d9;
+    --color-deep-indigo: #262a60;
+    --color-text: #e9e9ed;
+
+    --color-indigo-band-base: #262a60;
+    --color-indigo-band-glow: #353b80;
+    --color-indigo-band-edge: #4c5397;
+
+    --color-neutral-50: #f0f2fe;
+    --color-neutral-100: #f3f5fe;
+    --color-neutral-200: #e4e7f5;
+    --color-neutral-300: #cfd3e5;
+    --color-neutral-400: #b2b6ca;
+    --color-neutral-500: #9397ab;
+    --color-neutral-600: #75798c;
+    --color-neutral-700: #595d6c;
+    --color-neutral-800: #3f424d;
+    --color-neutral-900: #292b31;
+    --color-neutral-950: #232d42;
+
+    --color-accent-purple-100: #f5f4ff;
+    --color-accent-purple-200: #e7e5fe;
+    --color-accent-purple-300: #d2cefd;
+    --color-accent-purple-400: #b5abfc;
+    --color-accent-purple-500: #968ae0;
+    --color-accent-purple-600: #796cbf;
+    --color-accent-purple-700: #5d5294;
+    --color-accent-purple-800: #423a6a;
+    --color-accent-purple-900: #2b2741;
+
+    --color-accent-muted-violet-100: #f5f4ff;
+    --color-accent-muted-violet-200: #e7e5fe;
+    --color-accent-muted-violet-300: #d2cefd;
+    --color-accent-muted-violet-400: #b5afe8;
+    --color-accent-muted-violet-500: #9690c9;
+    --color-accent-muted-violet-600: #7972a9;
+    --color-accent-muted-violet-700: #5c5783;
+    --color-accent-muted-violet-800: #423e5d;
+    --color-accent-muted-violet-900: #2b293a;
+
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-weight-500: 500;
+    --font-weight-400: 400;
+
+    --text-page-heading: 62px;
+    --text-section-heading: 30px;
+    --text-kicker: 12px;
+    --text-hero: 118px;
+    --text-body: 17px;
+    --text-nav: 13px;
+
+    --tracking-hero: 0.035em;
+    --leading-body: 1.65;
+
+
+}
