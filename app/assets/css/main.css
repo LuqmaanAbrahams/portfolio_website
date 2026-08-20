@@ -53,11 +53,16 @@
     --text-section-heading: 30px;
     --text-kicker: 12px;
     --text-hero: 118px;
+    --text-hero-body: 25px;
     --text-body: 17px;
     --text-nav: 13px;
 
-    --tracking-hero: 0.035em;
-    --leading-body: 1.65;
+    --tracking-hero: -0.035em;
+
+    --leading-hero: 120px;
+    --leading-body: 1.65em;
+
+    --line-clamp-hero: 118px;
 
 
 }
