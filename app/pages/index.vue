@@ -1,7 +1,7 @@
 <template>
   <div>
     <section id="hero" class="h-screen">
-      <div class="grid justify-left pr-60 pl-40 py-25 max-h-screen">
+      <div class="grid justify-left px-25 py-25 max-h-screen">
         <div
           id="kicker"
           class="flex text-kicker font-400 text-accent-purple-300"
@@ -14,7 +14,7 @@
           ROODERPOORT, GAUTENG
         </div>
         <h1
-          class="font-500 font-display text-hero tracking-hero leading-hero line-clamp-hero pb-[50px]"
+          class="font-500 max-w-[7ch] font-display text-hero tracking-hero leading-hero line-clamp-hero pb-[50px]"
         >
           Luqmaan <span class="text-accent-purple-600">Abrahams</span>
         </h1>
