@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
 
 @theme {
     --color-ground: #161826;
@@ -11,6 +12,7 @@
     --color-indigo-band-glow: #353b80;
     --color-indigo-band-edge: #4c5397;
 
+    --color-neutral-50: #f0f2fe;
     --color-neutral-100: #f3f5fe;
     --color-neutral-200: #e4e7f5;
     --color-neutral-300: #cfd3e5;
@@ -20,6 +22,7 @@
     --color-neutral-700: #595d6c;
     --color-neutral-800: #3f424d;
     --color-neutral-900: #292b31;
+    --color-neutral-950: #232d42;
 
     --color-accent-purple-100: #f5f4ff;
     --color-accent-purple-200: #e7e5fe;

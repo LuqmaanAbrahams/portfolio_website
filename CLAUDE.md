@@ -55,3 +55,5 @@ Tailwind utilities live in `@layer utilities`, but a component's `<style scoped>
 
 This will explain the conventions of commit,pr,push messages and anything requiring a discription.
 `git commit -m ` messages must refrain from adding `authoured by claude` or the like to the messages. this also goes for PR reviews and merges
+
+When doing PR reviews please attach the review findingss to the respective PR as a comment

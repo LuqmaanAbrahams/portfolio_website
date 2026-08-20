@@ -17,7 +17,7 @@
         <ul id="navButtons" class="mt-[-10px] gap-4 flex text-text/80">
           <li class="" v-for="link in navLinks" :key="link.label">
             <NuxtLink
-              class="hover:text-accent-purple-100 px-[10px] py-[8px]"
+              class="inline-block hover:text-accent-purple-100 px-[10px] py-[8px]"
               :to="link.to"
               >{{ link.label }}</NuxtLink
             >
@@ -34,7 +34,7 @@ li {
   display: inline-block;
 }
 
-.router-link-active {
+#navButtons .router-link-active {
   color: var(--color-accent-purple-500);
   background-color: var(--color-accent-purple-900);
   border-radius: 5px;
@@ -44,8 +44,8 @@ li {
 <script setup lang="ts">
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/About" },
-  { label: "Portfolio", to: "/Portfolio" },
-  { label: "Contact", to: "/Contact" },
+  { label: "About", to: "/about" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact", to: "/contact" },
 ];
 </script>
