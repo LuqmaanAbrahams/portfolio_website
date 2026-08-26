@@ -1,7 +1,7 @@
 <template>
-  <div class="border-b border-text/16 text-nav">
-    <ul class="flex justify-between items-center pt-5 pb-[10px]">
-      <li class="px-10 ml-[-10px]">
+  <div class="sticky top-0 z-20 border-b border-text/16 bg-ground/86 text-nav backdrop-blur-[14px]">
+    <ul class="flex flex-wrap justify-between items-center gap-y-1 pt-5 pb-[10px]">
+      <li class="px-6 md:px-10 md:ml-[-10px]">
         <NuxtLink to="/">
           <ul class="gap-5 flex">
             <li
@@ -13,7 +13,7 @@
           </ul>
         </NuxtLink>
       </li>
-      <li class="px-15">
+      <li class="px-4 md:px-15">
         <ul id="navButtons" class="mt-[-10px] gap-4 flex text-text/80">
           <li class="" v-for="link in navLinks" :key="link.label">
             <NuxtLink

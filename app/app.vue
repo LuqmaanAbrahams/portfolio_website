@@ -1,7 +1,10 @@
 <template>
-  <div class="bg-ground min-h-screen text-text font-body">
+  <div class="flex min-h-screen flex-col bg-ground font-body text-text">
     <NuxtRouteAnnouncer />
     <NavBar />
-    <NuxtPage />
+    <div class="flex-1">
+      <NuxtPage />
+    </div>
+    <SiteFooter />
   </div>
 </template>
