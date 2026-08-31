@@ -12,13 +12,13 @@ export interface Project {
   kicker: string;
   summary: string;
   tags: string[];
-  /** Path under /public once a screenshot exists; the card shows a labelled
-   *  placeholder panel until then. */
-  image?: string;
-  /** Alt text for `image`. Never rendered as visible copy — see `placeholder`. */
+  /** Screenshot path under /public. Required: every project on the site
+   *  shows its media panel, so a project without one would render an empty
+   *  block rather than degrade gracefully. */
+  image: string;
+  /** Alt text for `image`, describing what the screenshot actually shows.
+   *  Never rendered as visible copy. */
   imageAlt: string;
-  /** Visible caption for the empty media panel while `image` is unset. */
-  placeholder?: string;
   /** Which accent ramp tints the project's media panel. */
   tint: "accent" | "violet";
 
@@ -47,8 +47,9 @@ export const useProjects = (): Project[] => [
     summary:
       "A photography ecommerce site with a CMS behind it, so the shop's imagery and listings stay in the owner's hands.",
     tags: ["Nuxt.js", "Vue.js", "TypeScript", "Firebase"],
-    imageAlt: "Zafari Africa — store screenshot",
-    placeholder: "Store screenshot coming soon",
+    image: "/zafariScreenShot.png",
+    imageAlt:
+      "The Zafari Africa storefront: a \"Premium African Wildlife Prints\" hero over a photo of a rolled print, with a Browse Collection button and cards for sizing, print quality and shipping.",
     tint: "accent",
     year: "2025",
     description:
@@ -67,8 +68,9 @@ export const useProjects = (): Project[] => [
     summary:
       "A marketing website for a deep cleaning business specialising in surface disinfection and odour removal and control.",
     tags: ["Nuxt.js", "Vue.js", "TypeScript", "Firebase"],
-    imageAlt: "Ventrox — homepage screenshot",
-    placeholder: "Homepage screenshot coming soon",
+    image: "/ventroxScreenShot.png",
+    imageAlt:
+      "The Ventrox homepage: the headline \"Hygiene engineered at the molecular source\" above a summary of its chlorine dioxide services, with Get in touch and Explore services buttons.",
     tint: "violet",
     year: "2025",
     description:
