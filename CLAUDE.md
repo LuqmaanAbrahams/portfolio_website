@@ -20,7 +20,14 @@ pnpm typecheck     # nuxt typecheck, via vue-tsc
 
 **`typescript` is a direct devDependency on purpose.** It was previously present only as a transitive dep, unhoisted, so `@nuxt/eslint-config` could not resolve it and silently skipped its TypeScript parser — every `<script setup lang="ts">` block failed with `Parsing error` and was effectively unlinted. Keep it pinned to the 5.x line: `typescript-eslint` does not support TS 7 yet, and installing it breaks `pnpm lint` outright.
 
-**Tests:** `@nuxt/test-utils` is installed but there is no test script, no test runner configured, and no test files yet. Adding tests means wiring up Vitest first.
+**Tests:** Vitest, via `pnpm test` (`pnpm test:watch` to iterate). Specs live in `test/*.spec.ts`.
+
+`vitest.config.ts` sets `environment: "nuxt"` for the whole suite, because the components under test rely on Nuxt auto-imports and globally-registered components (`<AppTag>` inside `<ProjectCard>`, `NuxtLink` inside `AppButton`). Mount with `mountSuspended` from `@nuxt/test-utils/runtime`, not `@vue/test-utils`'s `mount`.
+
+Two traps that environment brings:
+
+- `import.meta.url` is an **http** URL, not a `file://` one, so `fileURLToPath` throws. A spec that only reads source files should opt out with a `// @vitest-environment node` docblock and resolve paths from `process.cwd()` — see `test/reducedMotion.spec.ts`.
+- Asserting on raw `wrapper.html()` for a class name matches substrings across unrelated utilities: `order-` is inside `border-`. Tokenise the class attributes instead.
 
 ## Architecture
 
