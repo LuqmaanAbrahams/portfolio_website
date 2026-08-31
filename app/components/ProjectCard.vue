@@ -14,18 +14,12 @@ const tintClass = computed(() =>
   <article class="flex flex-col overflow-hidden rounded-md bg-surface shadow-sm">
     <div class="h-[220px] shrink-0" :class="tintClass">
       <NuxtImg
-        v-if="project.image"
         :src="project.image"
         :alt="project.imageAlt"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover object-top"
+        sizes="sm:100vw md:50vw lg:530px"
         loading="lazy"
       />
-      <p
-        v-else
-        class="grid h-full place-items-center px-6 text-center text-meta text-neutral-500"
-      >
-        {{ project.placeholder ?? "Screenshot coming soon" }}
-      </p>
     </div>
     <div class="flex flex-1 flex-col p-5 pb-6">
       <p class="text-tag tracking-[0.1em] text-accent-purple-300 uppercase">

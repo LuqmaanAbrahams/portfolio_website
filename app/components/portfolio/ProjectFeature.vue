@@ -25,18 +25,12 @@ const tintClass = computed(() =>
       :class="[tintClass, flipped ? 'md:order-2' : undefined]"
     >
       <NuxtImg
-        v-if="project.image"
         :src="project.image"
         :alt="project.imageAlt"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover object-top"
+        sizes="sm:100vw md:560px"
         loading="lazy"
       />
-      <p
-        v-else
-        class="grid h-full place-items-center px-6 text-center text-meta text-neutral-500"
-      >
-        {{ project.placeholder ?? "Screenshot coming soon" }}
-      </p>
     </div>
 
     <div :class="flipped ? 'md:order-1' : undefined">
