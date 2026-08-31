@@ -7,6 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -25,6 +28,8 @@
   },
   "devDependencies": {
     "better-sqlite3": "^13.0.3",
-    "postcss": "^8.5.26"
+    "postcss": "^8.5.26",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.11"
   }
 }
