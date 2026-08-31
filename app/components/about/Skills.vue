@@ -19,6 +19,7 @@ const groups = [
     ruleClass: "border-neutral-800",
     labelClass: "text-neutral-500",
     items: ["C#", "Java"],
+    dimmed: true,
     note: "From my degree — happy to pick either back up.",
   },
 ] as const;
@@ -51,7 +52,7 @@ const groups = [
             v-for="item in group.items"
             :key="item"
             class="font-display text-body"
-            :class="group.note ? 'text-neutral-400' : undefined"
+            :class="'dimmed' in group ? 'text-neutral-400' : undefined"
           >
             {{ item }}
           </li>
