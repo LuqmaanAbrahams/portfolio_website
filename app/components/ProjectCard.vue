@@ -24,7 +24,7 @@ const tintClass = computed(() =>
         v-else
         class="grid h-full place-items-center px-6 text-center text-meta text-neutral-500"
       >
-        {{ project.imageAlt }}
+        {{ project.placeholder ?? "Screenshot coming soon" }}
       </p>
     </div>
     <div class="flex flex-1 flex-col p-5 pb-6">

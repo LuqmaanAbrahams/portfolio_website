@@ -17,7 +17,7 @@
     --color-indigo-band-base: #262a60;
     --color-indigo-band-glow: #353b80;
     --color-indigo-band-edge: #4c5397;
-    /* band-base faded 78% toward --color-ground; the band's bottom stop */
+    /* band-base faded 25% toward --color-ground; the band's bottom stop */
     --color-indigo-band-fade: #222653;
 
     --color-neutral-50: #f0f2fe;
@@ -187,15 +187,21 @@
 }
 
 /* Entrance animations use `both` fill, so collapsing their duration leaves
-   every element at its final, visible state. Unlayered on purpose: it has to
-   beat the utilities it is switching off. */
+   every element at its final, visible state. The delays have to go with the
+   durations: backwards fill holds the `from` frame (opacity: 0) for the whole
+   delay, so leaving a staggered `[animation-delay:…]` in place would hide the
+   element and then pop it in — the animation the setting asked us to skip,
+   minus the motion. A negative delay starts each one already finished.
+   Unlayered on purpose: it has to beat the utilities it is switching off. */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+        animation-delay: -1ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
         scroll-behavior: auto !important;
     }
 }
