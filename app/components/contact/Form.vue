@@ -43,7 +43,7 @@ const onSubmit = () => {
         placeholder="Name"
         autocomplete="name"
         required
-      />
+      >
     </div>
 
     <div>
@@ -59,7 +59,7 @@ const onSubmit = () => {
         placeholder="you@company.com"
         autocomplete="email"
         required
-      />
+      >
     </div>
 
     <div>
@@ -79,8 +79,10 @@ const onSubmit = () => {
 
     <div class="flex flex-wrap items-center gap-3.5">
       <AppButton type="submit">Send message</AppButton>
-      <p v-if="handedOff" class="text-meta text-accent-purple-300" role="status">
-        Opening your mail app — send it and I'll be in touch.
+      <!-- The live region stays mounted so the message is announced when it
+           arrives; a region inserted alongside its own text often isn't. -->
+      <p class="text-meta text-accent-purple-300" role="status">
+        {{ handedOff ? "Opening your mail app — send it and I'll be in touch." : "" }}
       </p>
     </div>
   </form>
