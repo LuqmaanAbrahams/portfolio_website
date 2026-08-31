@@ -93,10 +93,12 @@
     --text-tag: 11px;
 
     --tracking-hero: -0.035em;
+    --tracking-page-heading: -0.03em;
     --tracking-heading: -0.02em;
     --tracking-kicker: 0.16em;
 
     --leading-hero: 0.94;
+    --leading-page-heading: 1.04;
     --leading-body: 1.65;
 
     /* ── Motion ───────────────────────────────────────────────────── */
