@@ -24,7 +24,7 @@ Nuxt 4 SPA/SSR site. Application source lives under `app/` (Nuxt 4's default `sr
 
 - `app/app.vue` — root shell. Holds the global chrome: background/text color classes, `<NavBar />`, and `<NuxtPage />`. Site-wide layout belongs here, not in individual pages.
 - `app/pages/` — file-based routing. Filenames map directly to URLs and **route paths are case-sensitive**, so `pages/about.vue` serves `/about` and will not match a link to `/About`.
-- `app/components/` — auto-imported. Components are used in templates without an `import` statement. Shared primitives sit at the top level (`AppButton`, `AppTag`, `SectionKicker`, `StatItem`, `ProjectCard`, `AmbientGlow`, `SiteFooter`); page-specific sections live in a subfolder that becomes their prefix, so `components/home/Hero.vue` is used as `<HomeHero />`. A page file should read as a list of its sections.
+- `app/components/` — auto-imported. Components are used in templates without an `import` statement. Shared primitives sit at the top level (`AppButton`, `AppTag`, `SectionKicker`, `PageHeader`, `StatItem`, `ProjectCard`, `AmbientGlow`, `SiteFooter`); page-specific sections live in a subfolder that becomes their prefix, so `components/home/Hero.vue` is used as `<HomeHero />`. A page file should read as a list of its sections.
 - `app/composables/` — auto-imported too. `useProjects()` is the single source for the portfolio list, so every surface that shows a project stays in sync. The home page's "Selected work" strip consumes it today; the portfolio page is still a bare heading.
 
 ### Styling: Tailwind v4 with no config file
