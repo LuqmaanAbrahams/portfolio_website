@@ -12,9 +12,13 @@ pnpm dev           # dev server on http://localhost:3000
 pnpm build         # production build
 pnpm generate      # static site generation
 pnpm preview       # serve the production build locally
+pnpm lint          # eslint . (pnpm lint:fix to autofix)
+pnpm typecheck     # nuxt typecheck, via vue-tsc
 ```
 
-**Lint:** no `lint` script is defined. `@nuxt/eslint` is installed and `eslint.config.mjs` re-exports the generated `./.nuxt/eslint.config.mjs`, so linting requires `.nuxt/` to exist — run `pnpm exec nuxt prepare` first if it's missing, then `pnpm exec eslint .`.
+**Lint and typecheck both need `.nuxt/` to exist** — `eslint.config.mjs` re-exports the generated `./.nuxt/eslint.config.mjs`. `pnpm install` handles this via its `postinstall`; run `pnpm exec nuxt prepare` if the directory is missing.
+
+**`typescript` is a direct devDependency on purpose.** It was previously present only as a transitive dep, unhoisted, so `@nuxt/eslint-config` could not resolve it and silently skipped its TypeScript parser — every `<script setup lang="ts">` block failed with `Parsing error` and was effectively unlinted. Keep it pinned to the 5.x line: `typescript-eslint` does not support TS 7 yet, and installing it breaks `pnpm lint` outright.
 
 **Tests:** `@nuxt/test-utils` is installed but there is no test script, no test runner configured, and no test files yet. Adding tests means wiring up Vitest first.
 

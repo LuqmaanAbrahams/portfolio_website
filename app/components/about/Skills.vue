@@ -1,7 +1,19 @@
 <script setup lang="ts">
+interface SkillGroup {
+  label: string;
+  /** Border colour of the group's top rule. */
+  ruleClass: string;
+  /** Colour of the group's label. */
+  labelClass: string;
+  items: string[];
+  /** Dims the items — the tier is not current work. */
+  dimmed?: boolean;
+  note?: string;
+}
+
 /** Three honest tiers. The top rule and the label colour carry how current
  *  each group is, so the list itself needs no extra annotation. */
-const groups = [
+const groups: SkillGroup[] = [
   {
     label: "Everyday",
     ruleClass: "border-accent-purple-700",
@@ -22,7 +34,7 @@ const groups = [
     dimmed: true,
     note: "From my degree — happy to pick either back up.",
   },
-] as const;
+];
 </script>
 
 <template>
@@ -52,7 +64,7 @@ const groups = [
             v-for="item in group.items"
             :key="item"
             class="font-display text-body"
-            :class="'dimmed' in group ? 'text-neutral-400' : undefined"
+            :class="group.dimmed ? 'text-neutral-400' : undefined"
           >
             {{ item }}
           </li>

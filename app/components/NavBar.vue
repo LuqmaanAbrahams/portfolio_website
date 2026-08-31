@@ -33,6 +33,14 @@
   </div>
 </template>
 
+<script setup lang="ts">
+const navLinks = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact", to: "/contact" },
+];
+</script>
 <style scoped>
 li {
   list-style: none;
@@ -46,11 +54,3 @@ li {
   transition: background-color ease-in-out 0.2s;
 }
 </style>
-<script setup lang="ts">
-const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Contact", to: "/contact" },
-];
-</script>
