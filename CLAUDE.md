@@ -73,6 +73,22 @@ Tailwind utilities live in `@layer utilities`, but a component's `<style scoped>
 
 The same ordering trap applies between utilities. Two utilities for one property — `border-transparent` in a component's base class and `border-blurple` in its variant class — have equal specificity, so the winner is whichever Tailwind happens to emit later, not the one written last in the template. Give each variant its own value for the property instead of overriding a shared default (see `AppButton.vue`).
 
+## Deployment (GitHub Pages)
+
+The site is a GitHub Pages **project** site, served from `/portfolio_website/`, not a domain root. Three things follow from that:
+
+- **`app.baseURL: "/portfolio_website/"`** in `nuxt.config.ts`. Nuxt rewrites router links and image URLs from this one value. Without it the generated HTML asks for `/_nuxt/…`, one directory above where the files land. Set it back to `"/"` if a custom domain is ever pointed here. It also means `pnpm preview` serves at `localhost:3000/portfolio_website/`, not the root.
+- **`public/.nojekyll`** (empty). Pages runs Jekyll by default, and Jekyll skips every directory starting with an underscore — which is `_nuxt/`, `_ipx/`, `_fonts/` and `_payload.json`, i.e. essentially the whole site. The HTML still loads, so the symptom is unstyled text rather than an obvious 404.
+- **`nitro.prerender.concurrency: 1`.** With a `baseURL` the crawler reaches every page twice, at `/about` and at `/portfolio_website/about`. Both render the same route and write the same prerender cache file; on Windows the concurrent rename fails with `EPERM` and the build aborts. Serialising costs nothing measurable here.
+
+Deploy `.output/public` as-is — Nitro strips the `baseURL` prefix when writing files, so the output stays flat.
+
+### SEO and images
+
+`usePageSeo()` (in `app/composables/`) is what pages call, not `useSeoMeta()` directly. It sets title/description plus the Open Graph and Twitter equivalents, so a shared link renders as a card. `og:image` and `og:url` must be **absolute** — scrapers ignore relative paths — so the composable holds the deployed origin as a constant.
+
+`<NuxtImg>` needs `format="webp"` **on the tag**. The `image: { format: [...] }` config key only orders `<source>` types for `<NuxtPicture>` and is a no-op for `<NuxtImg>`; the project screenshots are photographic, and PNG at eight widths each was 4.6 MB of a 7.3 MB build against 332 KB as WebP.
+
 ## Git
 
 This will explain the conventions of commit,pr,push messages and anything requiring a discription.

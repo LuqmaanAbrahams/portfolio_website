@@ -11,7 +11,10 @@ describe("AppButton", () => {
 
     const anchor = button.find("a");
     expect(anchor.exists()).toBe(true);
-    expect(anchor.attributes("href")).toBe("/portfolio");
+    // NuxtLink prefixes app.baseURL, so derive it rather than hardcoding the
+    // deployment path here.
+    const { baseURL } = useRuntimeConfig().app;
+    expect(anchor.attributes("href")).toBe(`${baseURL}portfolio`.replace("//", "/"));
     expect(button.text()).toBe("See the work");
     expect(button.find("button").exists()).toBe(false);
   });
