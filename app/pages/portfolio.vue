@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const projects = useProjects();
 
-useSeoMeta({
+usePageSeo({
   title: "Portfolio — Luqmaan Abrahams",
   description:
     "Two live client sites built end to end: a photography ecommerce store with a CMS, and a marketing site for a deep cleaning business.",

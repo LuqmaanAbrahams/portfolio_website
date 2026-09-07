@@ -27,6 +27,7 @@ const tintClass = computed(() =>
       <NuxtImg
         :src="project.image"
         :alt="project.imageAlt"
+        format="webp"
         class="h-full w-full object-cover object-top"
         sizes="sm:100vw md:560px"
         loading="lazy"

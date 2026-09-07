@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: "About — Luqmaan Abrahams",
   description:
     "Website developer in Roodepoort, Gauteng. BSc in computer and information sciences from Monash South Africa, freelancing since December 2024.",
