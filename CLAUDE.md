@@ -42,6 +42,8 @@ Nuxt 4 SPA/SSR site. Application source lives under `app/` (Nuxt 4's default `sr
 
 Tailwind comes in through `@nuxt/ui` and is configured **entirely in CSS** — there is deliberately no `tailwind.config.js` (an earlier one was removed). The single source of truth is `app/assets/css/main.css`, registered via the `css` array in `nuxt.config.ts`.
 
+**Keep `@nuxt/ui` in `modules` even though nothing renders a `<U…>` component.** `main.css` opens with `@import "@nuxt/ui"`, and that import is how Tailwind enters the build — dropping the module costs every utility class on the site, not just the components. (`@nuxt/content` and `@nuxt/icon` were genuinely unused and have been removed.)
+
 That file's `@theme` block defines design tokens, and **Tailwind v4 generates utilities from them automatically**. This is the main thing to understand before touching styles:
 
 | Token in `@theme`   | Generated utility              |
