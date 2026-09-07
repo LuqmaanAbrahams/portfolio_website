@@ -20,6 +20,8 @@ pnpm typecheck     # nuxt typecheck, via vue-tsc
 
 **`typescript` is a direct devDependency on purpose.** It was previously present only as a transitive dep, unhoisted, so `@nuxt/eslint-config` could not resolve it and silently skipped its TypeScript parser — every `<script setup lang="ts">` block failed with `Parsing error` and was effectively unlinted. Keep it pinned to the 5.x line: `typescript-eslint` does not support TS 7 yet, and installing it breaks `pnpm lint` outright.
 
+**`eslint` is a direct devDependency for the same reason** — it arrived only through `@nuxt/eslint`, and while pnpm happened to hoist its binary locally, a clean `pnpm install --frozen-lockfile` on CI did not link it and `pnpm lint` died with `eslint: not found`. Declare a tool you invoke by name in a script.
+
 **Tests:** Vitest, via `pnpm test` (`pnpm test:watch` to iterate). Specs live in `test/*.spec.ts`.
 
 `vitest.config.ts` sets `environment: "nuxt"` for the whole suite, because the components under test rely on Nuxt auto-imports and globally-registered components (`<AppTag>` inside `<ProjectCard>`, `NuxtLink` inside `AppButton`). Mount with `mountSuspended` from `@nuxt/test-utils/runtime`, not `@vue/test-utils`'s `mount`.
