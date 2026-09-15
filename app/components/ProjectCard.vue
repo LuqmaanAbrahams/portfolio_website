@@ -45,7 +45,9 @@ const tintClass = computed(() =>
         rel="noopener noreferrer"
         class="mt-4 self-start"
       >
-        {{ project.link.label }} ↗
+        {{ project.link.label }}
+        <span class="sr-only">(opens in a new tab)</span>
+        <span aria-hidden="true">↗</span>
       </AppButton>
     </div>
   </article>
