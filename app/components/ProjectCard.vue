@@ -37,6 +37,16 @@ const tintClass = computed(() =>
           <AppTag variant="outline">{{ tag }}</AppTag>
         </li>
       </ul>
+      <AppButton
+        v-if="project.link"
+        :href="project.link.href"
+        variant="ghost"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 self-start"
+      >
+        {{ project.link.label }} ↗
+      </AppButton>
     </div>
   </article>
 </template>

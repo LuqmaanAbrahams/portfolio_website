@@ -50,6 +50,14 @@ describe("useProjects", () => {
     expect(project.imageAlt).not.toMatch(/^screenshot|placeholder/i);
   });
 
+  it.each(useProjects())("$slug link is absolute and labelled", (project) => {
+    if (!project.link) return;
+    // These leave the site, so they must be full URLs — a bare path would
+    // resolve under /portfolio_website/ and 404.
+    expect(project.link.href).toMatch(/^https:\/\//);
+    expect(project.link.label).toBeTruthy();
+  });
+
   it.each(useProjects())("$slug spec rows are complete", (project) => {
     for (const spec of project.specs) {
       expect(spec.label).toBeTruthy();
