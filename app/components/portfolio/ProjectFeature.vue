@@ -57,6 +57,19 @@ const tintClass = computed(() =>
           <AppTag :variant="project.tint">{{ trait }}</AppTag>
         </li>
       </ul>
+
+      <AppButton
+        v-if="project.link"
+        :href="project.link.href"
+        variant="primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6"
+      >
+        {{ project.link.label }}
+        <span class="sr-only">(opens in a new tab)</span>
+        <span aria-hidden="true">↗</span>
+      </AppButton>
     </div>
   </article>
 </template>

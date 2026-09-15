@@ -21,6 +21,20 @@ const classTokens = (wrapper: { attributes: (k: string) => string | undefined; f
     .filter(Boolean);
 
 describe("ProjectCard", () => {
+  it("links out to the project in a new tab", async () => {
+    const card = await mountSuspended(ProjectCard, {
+      props: { project: zafari! },
+    });
+
+    const link = card.find(`a[href="${zafari!.link!.href}"]`);
+    expect(link.exists()).toBe(true);
+    expect(link.text()).toContain(zafari!.link!.label);
+    // It leaves the site, so it must not hijack the portfolio tab.
+    expect(link.attributes("target")).toBe("_blank");
+    expect(link.attributes("rel")).toContain("noopener");
+  });
+
+
   it("renders the screenshot with its alt text", async () => {
     const card = await mountSuspended(ProjectCard, {
       props: { project: zafari! },
@@ -57,6 +71,19 @@ describe("ProjectCard", () => {
 });
 
 describe("ProjectFeature", () => {
+  it("links out to the project in a new tab", async () => {
+    const feature = await mountSuspended(ProjectFeature, {
+      props: { project: ventrox! },
+    });
+
+    const link = feature.find(`a[href="${ventrox!.link!.href}"]`);
+    expect(link.exists()).toBe(true);
+    expect(link.text()).toContain(ventrox!.link!.label);
+    expect(link.attributes("target")).toBe("_blank");
+    expect(link.attributes("rel")).toContain("noopener");
+  });
+
+
   it("renders the write-up, specs and traits", async () => {
     const feature = await mountSuspended(ProjectFeature, {
       props: { project: zafari! },
