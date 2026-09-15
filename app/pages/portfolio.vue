@@ -4,7 +4,7 @@ const projects = useProjects();
 usePageSeo({
   title: "Portfolio — Luqmaan Abrahams",
   description:
-    "Two live client sites built end to end: a photography ecommerce store with a CMS, and a marketing site for a deep cleaning business.",
+    "Two live client sites built end to end — a photography ecommerce store with a CMS and a marketing site for a deep cleaning business — plus the early HTML, CSS and JavaScript projects that came before them.",
 });
 </script>
 
@@ -12,8 +12,8 @@ usePageSeo({
   <main class="mx-auto max-w-page px-6 pt-16 pb-24 md:px-10 md:pt-[72px]">
     <PageHeader
       kicker="Portfolio"
-      heading="Two client sites, built end to end."
-      lede="Both are live client work — frontend, backend and hosting."
+      heading="Client work, and where it started."
+      lede="Two live client sites built end to end — frontend, backend and hosting — followed by two early projects in plain HTML, CSS and JavaScript."
       class="mb-14"
     />
 
