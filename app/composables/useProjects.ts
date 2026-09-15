@@ -82,4 +82,45 @@ export const useProjects = (): Project[] => [
     ],
     traits: ["Service pages", "Lead capture", "Local business"],
   },
+  {
+    slug: "sunshine-sparkle",
+    name: "Sunshine Sparkle",
+    kicker: "Marketing site",
+    summary:
+      "A marketing website for a fictional solar panel cleaning company, built early on with plain HTML, CSS and JavaScript on top of Bootstrap.",
+    tags: ["HTML / CSS", "JavaScript", "Bootstrap"],
+    image: "/sunSparkleScreenShot.png",
+    imageAlt:
+      "The Sunshine Sparkle homepage: a \"Solar panel cleaning\" headline over a photo of a technician washing a solar array, a green Contact Us And Get A Quote button, and an About Us section beside a line illustration of panels and a sun.",
+    tint: "accent",
+    year: "2023",
+    description:
+      "One of my earliest builds: a multi-section marketing site for Sunshine Sparkle, a fictional solar panel cleaning company. Static HTML and CSS with vanilla JavaScript, laid out on Bootstrap's grid and components — no framework, no build step.",
+    specs: [
+      { label: "Frontend", value: "HTML / CSS, JavaScript" },
+      { label: "Styling", value: "Bootstrap" },
+    ],
+    traits: ["Static site", "Early work", "Fictional brand"],
+  },
+  {
+    slug: "weathersense",
+    name: "WeatherSense",
+    kicker: "Weather app · API",
+    summary:
+      "A small weather app that looks up the current conditions for any city, with a Node backend proxying the weather API so the key stays off the client.",
+    tags: ["HTML / CSS", "JavaScript", "Express"],
+    image: "/weatherSenseScreenshot.png",
+    imageAlt:
+      "The WeatherSense search screen: a WeatherSense banner, an Enter a City Name field and a Search button centred over a photo of a mountain peak rising above a sea of cloud.",
+    tint: "violet",
+    year: "2023",
+    description:
+      "An early full-stack exercise: a city weather lookup with a plain HTML, CSS and JavaScript frontend and a small Express server behind it. The server makes the weather API calls, with dotenv keeping the API key in environment variables and cors letting the frontend talk to it.",
+    specs: [
+      { label: "Frontend", value: "HTML / CSS, JavaScript" },
+      { label: "Backend", value: "Node.js, Express, cors" },
+      { label: "Config", value: "dotenv for API keys" },
+    ],
+    traits: ["Full-stack", "Third-party API", "Early work"],
+  },
 ];
